@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root{
+    --color-fondo: #F3F5FC;
+    --color-texto: #0A3871;
+    --color-fondo-encriptado: #FFFFFF;
+    --color-textos-encriptado: #495057;
+
+    --fuente-textos: "Inter", sans-serif;
+    --peso-fuente-textos: 400;
+    --fuente-titulos: "Inter", sans-serif;
+    --peso-fuente-titulos: 700;
+}
+
+.header{
+    
+}
+
+.header__imagen{
+
+}
+
+.header__titulo{
+    font-family: var(--fuente-titulos);
+    font-weight: var(--peso-fuente-titulos);
+    font-size: 3rem;
+    color: var(--color-texto);
+}
+
+.main{
+
+}
+
+.main__ingreso{
+    font-family: var(--fuente-textos);
+    font-weight: var(--peso-fuente-textos);
+    font-size: 2rem;
+    color: var(--color-texto);
+}
+
+.main__advertencia{
+
+}
+
+.main__advertencia__imagen{
+
+}
+
+.main__advertencia__textos{
+    
+}
+
+.main__buttons{
+
+}
+
+.main__button__encriptar{
+    font-family: var(--fuente-textos);
+    font-weight: var(--color-fondo-encriptado);
+    font-size: 2rem;
+    color: var(--color-fondo-encriptado);
+    background-color: var(--color-texto);
+}
+
+.main__button__desencriptar{
+    font-family: var(--fuente-textos);
+    font-weight: var(--peso-fuente-textos);
+    font-size: 1rem;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+}
+
+.main__devolucion{
+
+}
+
+.main__devolucion__img{
+
+}
+
+.main__devolucion__titulo{
+    font-family: var(--fuente-titulos);
+    font-weight: var(--peso-fuente-titulos);
+    font-size: 1.5rem;
+    color: var(--color-textos-encriptado);
+}
+
+.main__devolucion__texto{
+
+}
+
+.footer{
+
+}
+
+.footer__texto{
+    
+}
