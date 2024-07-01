@@ -5,94 +5,176 @@
     --color-texto: #0A3871;
     --color-fondo-encriptado: #FFFFFF;
     --color-textos-encriptado: #495057;
+    --color-hover-encriptado: #024ba5;
+    --color-hover-desencriptado: #d8dff7;
 
     --fuente-textos: "Inter", sans-serif;
     --peso-fuente-textos: 400;
-    --fuente-titulos: "Inter", sans-serif;
     --peso-fuente-titulos: 700;
 }
 
+body{
+    height: 100vh;
+    background-color: var(--color-fondo);
+}
+
 .header{
-    
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 4%;
+    gap: 30px;
 }
 
 .header__imagen{
-
+    height: 48px;
+    width: 31px;
 }
 
 .header__titulo{
-    font-family: var(--fuente-titulos);
+    font-family: var(--fuente-textos);
     font-weight: var(--peso-fuente-titulos);
     font-size: 3rem;
     color: var(--color-texto);
 }
 
 .main{
-
+    display: flex;
+    height: 85%;
 }
 
 .main__ingreso{
+    width: 70%;
+    padding: 0 0 0 3%;
     font-family: var(--fuente-textos);
     font-weight: var(--peso-fuente-textos);
     font-size: 2rem;
     color: var(--color-texto);
 }
 
-.main__advertencia{
+#main__ingreso__textarea{
+    height: 80%;
+    width: 100%;
+    font-family: var(--fuente-textos);
+    font-weight: var(--peso-fuente-textos);
+    font-size: 2rem;
+    text-align: initial;
+    color: var(--color-texto);
+    border-style: none;
+    background-color: var(--color-fondo);
+    resize: none;
+}
 
+.main__advertencia{
+    font-family: var(--fuente-textos);
+    font-weight: var(--peso-fuente-textos);
+    font-size: 0.75rem;
+    color: var(--color-textos-encriptado);
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .main__advertencia__imagen{
-
-}
-
-.main__advertencia__textos{
-    
+    size: 16px;
 }
 
 .main__buttons{
-
+    display: flex;
+    gap: 24px;    
 }
 
 .main__button__encriptar{
+    width: 328px;
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+    border-radius: 24px;
+    border-style: solid;
     font-family: var(--fuente-textos);
     font-weight: var(--color-fondo-encriptado);
-    font-size: 2rem;
+    font-size: 1rem;
+    text-decoration: none;
     color: var(--color-fondo-encriptado);
     background-color: var(--color-texto);
 }
 
 .main__button__desencriptar{
+    width: 328px;
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+    border-radius: 24px;
+    border: 0.1px;
+    border-style: solid;
     font-family: var(--fuente-textos);
     font-weight: var(--peso-fuente-textos);
     font-size: 1rem;
+    text-decoration: none;
     color: var(--color-texto);
     background-color: var(--color-fondo);
 }
 
 .main__devolucion{
+    width: 30%;
+    margin: 0 1% 1% 1%;
+    border-radius: 32px;
+    box-shadow: 0px 0px 12px gainsboro;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-fondo-encriptado);
 
 }
 
 .main__devolucion__img{
-
+    
 }
 
 .main__devolucion__titulo{
-    font-family: var(--fuente-titulos);
+    font-family: var(--fuente-textos);
     font-weight: var(--peso-fuente-titulos);
     font-size: 1.5rem;
     color: var(--color-textos-encriptado);
 }
 
 .main__devolucion__texto{
+    font-family: var(--fuente-textos);
+    font-weight: var(--peso-fuente-textos);
+    font-size: 1rem;
+    color: var(--color-textos-encriptado);
+}
 
+#main__devolucion__textarea{ /*Solamente para encriptado.html*/
+    width: 88%;
+    height: 92%;
+    resize: none;
+    border-style: none;
+    border-radius: 18px;
+    font-family: var(--fuente-textos);
+    font-weight: var(--peso-fuente-textos);
+    font-size: 1rem;
+    color: var(--color-textos-encriptado);
 }
 
 .footer{
-
+    background-color: var(--color-texto);
+    display: flex;
+    justify-content: center;
 }
 
 .footer__texto{
-    
+    font-family: var(--fuente-textos);
+    font-weight: var(--peso-fuente-titulos);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--color-fondo-encriptado);
+}
+
+.main__button__encriptar:hover{
+    background-color: var(--color-hover-encriptado);
+}
+
+.main__button__desencriptar:hover{
+    background-color: var(--color-hover-desencriptado);
 }

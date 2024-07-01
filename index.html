@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador de Texto</title>
+    <link rel="stylesheet" href="./styles/normalize.css">
     <link rel="stylesheet" href="./styles/style.css">
     <script src="/app.js"></script>
 </head>
@@ -18,16 +19,16 @@
 
     <main class="main">
         <section class="main__ingreso">
-            <input type="text">
+            <textarea name="codigo-a-encriptar" id="main__ingreso__textarea" autocomplete="off" required>Ingrese aquí el texto</textarea>
 
             <div class="main__advertencia">
                 <img src="./assets/exclamacion.png" alt="Signo exclamacion gris" class="main__advertencia__imagen">
-                <p class="main__advertencia__textos">Sólo letras minúsculas y sin acentos</p>
+                <p>Sólo letras minúsculas y sin acentos</p>
             </div>
 
             <div class="main__buttons">
-                <a href="" class="main__button__encriptar">Encriptar</a>
-                <a href="" class="main__button__desencriptar">Desencriptar</a>
+                <a href="/encriptado.html" class="main__button__encriptar">Encriptar</a>
+                <a href="/encriptado.html" class="main__button__desencriptar">Desencriptar</a>
             </div>
 
         </section>

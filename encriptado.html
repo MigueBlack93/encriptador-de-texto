@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es-ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto Encriptado o Desencriptado</title>
+    <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="/app.js"></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <img src="./assets/logo.png" alt="Logo Alura Latam" class="header__imagen">
+        <h1 class="header__titulo">¡Bienvenido al encriptador de texto!</h1>        
+    </header>
+
+    <main class="main">
+        <section class="main__ingreso">
+            <textarea name="codigo-a-encriptar" id="main__ingreso__textarea" autocomplete="off" required></textarea>
+
+            <div class="main__advertencia">
+                <img src="./assets/exclamacion.png" alt="Signo exclamacion gris" class="main__advertencia__imagen">
+                <p>Sólo letras minúsculas y sin acentos</p>
+            </div>
+
+            <div class="main__buttons">
+                <a href="/encriptado.html" class="main__button__encriptar">Encriptar</a>
+                <a href="/encriptado.html" class="main__button__desencriptar">Desencriptar</a>
+            </div>
+
+        </section>
+
+        <section class="main__devolucion">
+            <textarea name="codigo-a-desencriptar" id="main__devolucion__textarea" autocomplete="off" required></textarea>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p class="footer__texto">Desarrollado por Miguel</p>
+    </footer>
+    
+</body>
+
+</html>
