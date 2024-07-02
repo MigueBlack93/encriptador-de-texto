@@ -44,7 +44,7 @@ body{
 
 .main__ingreso{
     width: 70%;
-    padding: 0 0 0 3%;
+    padding: 0 0 0% 3%;
     font-family: var(--fuente-textos);
     font-weight: var(--peso-fuente-textos);
     font-size: 2rem;
@@ -83,7 +83,7 @@ body{
     gap: 24px;    
 }
 
-.main__button__encriptar{
+#main__button__encriptar{
     width: 328px;
     display: flex;
     justify-content: center;
@@ -98,7 +98,7 @@ body{
     background-color: var(--color-texto);
 }
 
-.main__button__desencriptar{
+#main__button__desencriptar{
     width: 328px;
     display: flex;
     justify-content: center;
@@ -127,9 +127,9 @@ body{
 
 }
 
-.main__devolucion__img{
+/*.main__devolucion__img{
     
-}
+}*/
 
 .main__devolucion__titulo{
     font-family: var(--fuente-textos);
@@ -145,10 +145,7 @@ body{
     color: var(--color-textos-encriptado);
 }
 
-#main__devolucion__textarea{ /*Solamente para encriptado.html*/
-    width: 88%;
-    height: 92%;
-    resize: none;
+.main__devolucion__encriptado{ /*Solamente para encriptado.html*/
     border-style: none;
     border-radius: 18px;
     font-family: var(--fuente-textos);
@@ -171,10 +168,18 @@ body{
     color: var(--color-fondo-encriptado);
 }
 
-.main__button__encriptar:hover{
+#main__button__encriptar:disabled{
+    background-color: #495057;
+}
+
+#main__button__encriptar:hover{
     background-color: var(--color-hover-encriptado);
 }
 
-.main__button__desencriptar:hover{
+#main__button__desencriptar:disabled{
+    background-color: #495057;
+}
+
+#main__button__desencriptar:hover{
     background-color: var(--color-hover-desencriptado);
 }
