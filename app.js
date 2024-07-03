@@ -2,12 +2,9 @@ let texto_a_Encriptar = [];
 let texto_Encriptado = [];
 let texto_a_Desencriptar = [];
 let texto_Desencriptado = [];
-let caracteresAdmitidos = ["a","b","c","d","e","f","g","h","i","j","k","l,","m","n","ñ","o","p","q","r","s","t","u","v","w","x","y","z",","," ","."]
+let caracteresNoAdmitidos = [];
+let sumatoriaCaracteresNoAdmitidos = 0;
 let solamenteCaracteres = "¡Caracter no admitido! Solamente letras minúsculas y sin acentos.";
-
-function imprimir_En_Derecho(letra){
-    
-}
 
 function encripto (vocal){
     if (vocal === "a"){
@@ -27,14 +24,26 @@ function encripto (vocal){
     }
 }
 
-function caracterNoAdmitido(){
-
-
-    if(document.getElementById("main__ingreso__textarea").onkeydown==caracteresAdmitidos[1]){
-        return;
+function cargarCaracteresNoAdmitidos(desde, hasta){
+    for(i=desde;i<=hasta;i++){
+        caracteresNoAdmitidos[sumatoriaCaracteresNoAdmitidos] = String.fromCharCode(i);
+        sumatoriaCaracteresNoAdmitidos++;
     }
-    else{
-        alert(solamenteCaracteres);
+}
+
+cargarCaracteresNoAdmitidos(33, 43);
+cargarCaracteresNoAdmitidos(45, 45);
+cargarCaracteresNoAdmitidos(47, 96);
+cargarCaracteresNoAdmitidos(123,255);
+
+function caracterNoAdmitido(caracter){
+    for(i=0;i<caracteresNoAdmitidos.length;i++){
+        if(caracter.key==caracteresNoAdmitidos[0]){
+            alert(solamenteCaracteres);
+        }
+        else{
+            return caracter;
+        }
     }
 }
 
