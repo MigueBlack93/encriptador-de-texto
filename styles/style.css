@@ -51,7 +51,7 @@ body{
     color: var(--color-texto);
 }
 
-#main__ingreso__textarea{
+#main-ingreso-textarea{
     height: 80%;
     width: 100%;
     font-family: var(--fuente-textos);
