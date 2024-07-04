@@ -154,6 +154,21 @@ body{
     color: var(--color-textos-encriptado);
 }
 
+.main__devolucion__button__copiar{
+    width: 328px;
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+    border-radius: 24px;
+    border-style: solid;
+    font-family: var(--fuente-textos);
+    font-weight: var(--color-fondo-encriptado);
+    font-size: 1rem;
+    text-decoration: none;
+    color: var(--color-fondo-encriptado);
+    background-color: var(--color-texto);
+}
+
 .footer{
     background-color: var(--color-texto);
     display: flex;
@@ -168,18 +183,18 @@ body{
     color: var(--color-fondo-encriptado);
 }
 
-#main__button__encriptar:disabled{
+#main-button-encriptar:disabled{
     background-color: #495057;
 }
 
-#main__button__encriptar:hover{
+#main-button-encriptar:hover{
     background-color: var(--color-hover-encriptado);
 }
 
-#main__button__desencriptar:disabled{
+#main-button-desencriptar:disabled{
     background-color: #495057;
 }
 
-#main__button__desencriptar:hover{
+#main-button-desencriptar:hover{
     background-color: var(--color-hover-desencriptado);
 }

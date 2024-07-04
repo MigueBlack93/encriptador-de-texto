@@ -18,7 +18,7 @@
 
     <main class="main">
         <section class="main__ingreso">
-            <textarea name="codigo__a__encriptar" id="main-ingreso-textarea" onkeydown="caracterNoAdmitido(event)" placeholder="Ingrese aquí el texto"></textarea>
+            <textarea name="codigo__a__encriptar" id="main-ingreso-textarea" placeholder="Ingrese aquí el texto"></textarea>
 
             <div class="main__advertencia">
                 <img src="./assets/exclamacion.png" alt="Signo exclamacion gris" class="main__advertencia__imagen">
@@ -26,8 +26,8 @@
             </div>
 
             <div class="main__buttons">
-                <button id="main__button__encriptar" onclick="encriptar();">Encriptar</button>
-                <button id="main__button__desencriptar" onclick="desencriptar();">Desencriptar</button>
+                <button id="main-button-encriptar" onclick="encriptar();">Encriptar</button>
+                <button id="main-button-desencriptar" onclick="desencriptar();">Desencriptar</button>
             </div>
 
         </section>
@@ -39,8 +39,9 @@
                 <p class="main__devolucion__texto">Ingrese el texto que desees encriptar o desencriptar.</p>
             </div>
 
-            <div id="main__devolucion__oculto">
-                <textarea name="codigo_a_desencriptar" class="main__devolucion__encriptado" id="main__devolucion__textarea" readonly></textarea>
+            <div id="main__devolucion__encripto" hidden>
+                <textarea name="codigo_a_desencriptar" class="main__devolucion__encriptado" id="main-devolucion-textarea" readonly></textarea>
+                <button class="main__devolucion__button__copiar" id="main-devolucion-copiar" onclick="copiar();">Copiar</button>
             </div>
         </section>
 
