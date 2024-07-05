@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador de Texto</title>
+    <link rel="stylesheet" href="./styles/normalize.css">
     <link rel="stylesheet" href="./styles/style.css">
-    <script src="/app.js"></script>
 </head>
 
 <body>
@@ -18,24 +18,31 @@
 
     <main class="main">
         <section class="main__ingreso">
-            <input type="text">
+            <textarea name="codigo__a__encriptar" class="main__ingreso__textarea" id="main-ingreso-textarea" placeholder="Ingrese aquí el texto" onkeyup="clearMuneco();"></textarea>
 
             <div class="main__advertencia">
                 <img src="./assets/exclamacion.png" alt="Signo exclamacion gris" class="main__advertencia__imagen">
-                <p class="main__advertencia__textos">Sólo letras minúsculas y sin acentos</p>
+                <p>Sólo letras minúsculas y sin acentos</p>
             </div>
 
             <div class="main__buttons">
-                <a href="" class="main__button__encriptar">Encriptar</a>
-                <a href="" class="main__button__desencriptar">Desencriptar</a>
+                <button class="main__button__encriptar" id="main-button-encriptar" onclick="encriptar();" disabled>Encriptar</button>
+                <button class="main__button__desencriptar" id="main-button-desencriptar" onclick="desencriptar();" disabled>Desencriptar</button>
             </div>
 
         </section>
 
         <section class="main__devolucion">
-            <img src="./assets/muneco.png" alt="Muñeco buscando si hay algún mensaje para desencriptar" class="main__devolucion__img">
-            <h2 class="main__devolucion__titulo">Ningún mensaje fue encontrado</h2>
-            <p class="main__devolucion__texto">Ingrese el texto que desees encriptar o desencriptar.</p>
+            <div class="main__devolucion__muneco" id="main-devolucion-muneco">
+                <img src="./assets/muneco.png" alt="Muñeco buscando si hay algún mensaje para desencriptar" class="main__devolucion__img">
+                <h2 class="main__devolucion__titulo">Ningún mensaje fue encontrado</h2>
+                <p class="main__devolucion__texto">Ingrese el texto que desees encriptar o desencriptar.</p>
+            </div>
+
+            <div class="main__devolucion__encripto" id="main-devolucion-encripto" hidden>
+                <textarea name="codigo_a_desencriptar" class="main__devolucion__textarea" id="main-devolucion-textarea" readonly></textarea>
+                <button class="main__devolucion__copiar" id="main-devolucion-copiar" onclick="copiar();">Copiar</button>
+            </div>
         </section>
 
     </main>
@@ -44,6 +51,8 @@
         <p class="footer__texto">Desarrollado por Miguel</p>
     </footer>
     
+    <script src="/app.js"></script>
+
 </body>
 
 </html>
