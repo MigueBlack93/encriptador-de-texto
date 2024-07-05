@@ -1,6 +1,6 @@
-let texto_Encriptado = [];
-let texto_Desencriptado = [];
 let solamenteCaracteres = "¡Caracter no admitido! Solamente letras minúsculas y sin acentos.";
+let vocales = ["a", "e", "i", "o", "u"];
+let reemplazo = ["ai", "enter", "imes", "ober", "ufat"];
 
 /*
 let caracteresNoAdmitidos = [];
@@ -41,6 +41,19 @@ caracter.addEventListener('keydown', function(event) {
     }
 });
 
+/*
+function encriptar(){
+    let texto_a_Encriptar = document.getElementById("main-ingreso-textarea").value.split("",undefined);
+
+    for ( i = 0 ; i < texto_a_Encriptar.length ; i++ ){
+        
+        texto_Encriptado[i] = encripto(texto_a_Encriptar[i]);
+
+    }
+    console.log(texto_Encriptado);
+    imprimir(texto_Encriptado);
+}
+
 function encripto (vocal){
     if (vocal === "a"){
         return "ai";
@@ -61,29 +74,30 @@ function encripto (vocal){
         return vocal;
     }
 }
+*/
+
+function reemplazoTexto(buscar, reemplazar){
+    let texto = document.getElementById('main-ingreso-textarea').value;
+    
+    for( i=0 ; i < vocales.length ; i++){
+        texto = texto.replaceAll(buscar[i], reemplazar[i]);
+    }
+
+    return texto;
+}
 
 function encriptar(){
-    let texto_a_Encriptar = document.getElementById("main-ingreso-textarea").value.split("",undefined);
+    let encriptado = reemplazoTexto(vocales, reemplazo);
 
-    for ( i = 0 ; i < texto_a_Encriptar.length ; i++ ){
-        
-        texto_Encriptado[i] = encripto(texto_a_Encriptar[i]);
-
-    }
-    console.log(texto_Encriptado);
-    imprimir(texto_Encriptado);
+    console.log(encriptado);
+    imprimir(encriptado);
 }
 
 function desencriptar(){
-    let texto_a_Desencriptar = document.getElementById('main-ingreso-textarea').value;
-    let reemplazo = ["ai", "enter", "imes", "ober", "ufat"];
-    let separadores = ["a", "e", "i", "o", "u"];
+    let desencriptado = reemplazoTexto(reemplazo, vocales);
 
-    for( i=0 ; i < separadores.length ; i++){
-        texto_a_Desencriptar = texto_a_Desencriptar.replaceAll(reemplazo[i], separadores[i]);
-    }
-    console.log(texto_a_Desencriptar);
-    imprimir(texto_a_Desencriptar);
+    console.log(desencriptado);
+    imprimir(desencriptado);
 }
 
 function imprimir(texto){

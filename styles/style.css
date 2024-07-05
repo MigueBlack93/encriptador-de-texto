@@ -122,9 +122,8 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     background-color: var(--color-fondo-encriptado);
-
 }
 
 .main__devolucion__titulo{
@@ -141,9 +140,7 @@ body{
     color: var(--color-textos-encriptado);
 }
 
-.main__devolucion__encriptado{ /*Solamente para encriptado.html*/
-    width: 105%;
-    height: auto;
+.main__devolucion__encripto{
     resize: none;
     border-style: none;
     border-radius: 18px;
@@ -153,7 +150,21 @@ body{
     color: var(--color-textos-encriptado);
 }
 
-.main__devolucion__button__copiar{
+.main__devolucion__textarea{
+    width: 25vw;
+    height: 33vw;
+    margin: 2% 0% 3% 0.5%;
+    resize: none;
+    border-style: none;
+    border-radius: 18px;
+    font-family: var(--fuente-textos);
+    font-weight: var(--peso-fuente-textos);
+    font-size: 1rem;
+    color: var(--color-textos-encriptado);
+}
+
+.main__devolucion__copiar{
+    margin: 0% 0% 0% 17%;
     width: 328px;
     display: flex;
     justify-content: center;
