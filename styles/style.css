@@ -51,7 +51,7 @@ body{
     color: var(--color-texto);
 }
 
-#main-ingreso-textarea{
+.main__ingreso__textarea{
     height: 80%;
     width: 100%;
     font-family: var(--fuente-textos);
@@ -83,7 +83,7 @@ body{
     gap: 24px;    
 }
 
-#main__button__encriptar{
+.main__button__encriptar{
     width: 328px;
     display: flex;
     justify-content: center;
@@ -98,7 +98,7 @@ body{
     background-color: var(--color-texto);
 }
 
-#main__button__desencriptar{
+.main__button__desencriptar{
     width: 328px;
     display: flex;
     justify-content: center;
@@ -127,10 +127,6 @@ body{
 
 }
 
-/*.main__devolucion__img{
-    
-}*/
-
 .main__devolucion__titulo{
     font-family: var(--fuente-textos);
     font-weight: var(--peso-fuente-titulos);
@@ -146,6 +142,9 @@ body{
 }
 
 .main__devolucion__encriptado{ /*Solamente para encriptado.html*/
+    width: 105%;
+    height: auto;
+    resize: none;
     border-style: none;
     border-radius: 18px;
     font-family: var(--fuente-textos);

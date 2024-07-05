@@ -1,6 +1,4 @@
-let texto_a_Encriptar = [];
 let texto_Encriptado = [];
-let texto_a_Desencriptar = [];
 let texto_Desencriptado = [];
 let solamenteCaracteres = "¡Caracter no admitido! Solamente letras minúsculas y sin acentos.";
 
@@ -33,7 +31,7 @@ caracter.addEventListener('keydown', function(event) {
         // Transforma la tecla en su código ASCII
         console.log('Código ASCII:', evento);
 
-    if((evento > 33 && evento < 45|| evento == 45 || evento > 47 && evento < 96 || evento > 123) && carac !== 'Enter' && carac !== 'Shift' && carac !== 'Backspace' && carac !== 'ArrowUp' && carac !== 'ArrowRight' && carac !== 'ArrowDown' && carac !== 'ArrowLeft' && carac !== 'Tab'){
+    if((evento > 33 && evento < 45 || evento == 45 || evento > 47 && evento < 96 || evento > 123) && carac !== 'Enter' && carac !== 'Shift' && carac !== 'Backspace' && carac !== 'ArrowUp' && carac !== 'ArrowRight' && carac !== 'ArrowDown' && carac !== 'ArrowLeft' && carac !== 'Tab'){
         alert(solamenteCaracteres);
         event.preventDefault();
         return;
@@ -64,14 +62,31 @@ function encripto (vocal){
     }
 }
 
-function encriptar (){
+function encriptar(){
     let texto_a_Encriptar = document.getElementById("main-ingreso-textarea").value.split("",undefined);
-    let texto_Encriptado = [];
 
-    for (i=0;i<texto_a_Encriptar.length;i++){
+    for ( i = 0 ; i < texto_a_Encriptar.length ; i++ ){
         
         texto_Encriptado[i] = encripto(texto_a_Encriptar[i]);
 
-        console.log(texto_Encriptado[i]);
     }
+    console.log(texto_Encriptado);
+    imprimir(texto_Encriptado);
+}
+
+function desencriptar(){
+    let texto_a_Desencriptar = document.getElementById('main-ingreso-textarea').value;
+    let reemplazo = ["ai", "enter", "imes", "ober", "ufat"];
+    let separadores = ["a", "e", "i", "o", "u"];
+
+    for( i=0 ; i < separadores.length ; i++){
+        texto_a_Desencriptar = texto_a_Desencriptar.replaceAll(reemplazo[i], separadores[i]);
+    }
+    console.log(texto_a_Desencriptar);
+    imprimir(texto_a_Desencriptar);
+}
+
+function imprimir(texto){
+    document.getElementById('main-devolucion-muneco').setAttribute('hidden', '');
+    document.getElementById('main-devolucion-encripto').removeAttribute('hidden');
 }
