@@ -15,7 +15,7 @@
 }
 
 body{
-    height: 100vh;
+    height: 100vw;
     background-color: var(--color-fondo);
 }
 
@@ -214,4 +214,64 @@ body{
 
 .main__devolucion__copiar:hover{
     background-color: var(--color-hover-encriptado);
+}
+
+@media (max-width: 1300px) {
+    body{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .header{
+        padding: 0% 6% 0% 6%;
+        justify-content: center;
+    }
+
+    .header__titulo{
+        text-align: center;
+        font-size: 2.75rem;
+    }
+
+    .main{
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .main__ingreso{
+        width: 90%;
+        padding: 0%;
+        margin: 0% 0% 3% 0%;
+    }
+
+    .main__ingreso__textarea{
+        height: 60vh;
+    }
+
+    .main__devolucion{
+        width: 90%;
+        height: 70vw;
+        margin: 0% 0% 4% 0%;
+    }
+
+    .main__devolucion__img{
+        display: none;
+    }
+
+    .main__devolucion__encripto{
+        resize: vertical;
+        justify-content: center;
+    }
+
+    .main__devolucion__textarea{
+        width: 80vw;
+        height: 30vw;
+    }
+
+    .main__devolucion__copiar{
+        margin: 0px 0px 0px 15vw;
+    }
+
 }
