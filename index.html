@@ -18,7 +18,7 @@
 
     <main class="main">
         <section class="main__ingreso">
-            <textarea name="codigo__a__encriptar" class="main__ingreso__textarea" id="main-ingreso-textarea" placeholder="Ingrese aquí el texto"></textarea>
+            <textarea name="codigo__a__encriptar" class="main__ingreso__textarea" id="main-ingreso-textarea" placeholder="Ingrese aquí el texto" onkeyup="clearMuneco();"></textarea>
 
             <div class="main__advertencia">
                 <img src="./assets/exclamacion.png" alt="Signo exclamacion gris" class="main__advertencia__imagen">
@@ -26,8 +26,8 @@
             </div>
 
             <div class="main__buttons">
-                <button class="main__button__encriptar" id="main-button-encriptar" onclick="encriptar();">Encriptar</button>
-                <button class="main__button__desencriptar" id="main-button-desencriptar" onclick="desencriptar();">Desencriptar</button>
+                <button class="main__button__encriptar" id="main-button-encriptar" onclick="encriptar();" disabled>Encriptar</button>
+                <button class="main__button__desencriptar" id="main-button-desencriptar" onclick="desencriptar();" disabled>Desencriptar</button>
             </div>
 
         </section>

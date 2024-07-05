@@ -7,6 +7,7 @@
     --color-textos-encriptado: #495057;
     --color-hover-encriptado: #024ba5;
     --color-hover-desencriptado: #d8dff7;
+    --color-disabled: #5f6164;
 
     --fuente-textos: "Inter", sans-serif;
     --peso-fuente-textos: 400;
@@ -159,7 +160,7 @@ body{
     border-radius: 18px;
     font-family: var(--fuente-textos);
     font-weight: var(--peso-fuente-textos);
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: var(--color-textos-encriptado);
 }
 
@@ -194,7 +195,7 @@ body{
 }
 
 #main-button-encriptar:disabled{
-    background-color: #495057;
+    background-color: var(--color-disabled)
 }
 
 #main-button-encriptar:hover{
@@ -202,9 +203,15 @@ body{
 }
 
 #main-button-desencriptar:disabled{
-    background-color: #495057;
+    color: var(--color-fondo-encriptado);
+    background-color: var(--color-disabled);
+    border-style: none;
 }
 
 #main-button-desencriptar:hover{
     background-color: var(--color-hover-desencriptado);
+}
+
+.main__devolucion__copiar:hover{
+    background-color: var(--color-hover-encriptado);
 }
