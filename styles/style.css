@@ -15,7 +15,7 @@
 }
 
 body{
-    height: 100vw;
+    height: 100vh;
     background-color: var(--color-fondo);
 }
 
@@ -218,7 +218,7 @@ body{
 
 @media (max-width: 1300px) {
     body{
-        height: 100vh;
+        height: fit-content;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -247,17 +247,27 @@ body{
     }
 
     .main__ingreso__textarea{
-        height: 60vh;
+        height: 53vh;
+        resize: vertical;
+
     }
 
     .main__devolucion{
         width: 90%;
-        height: 70vw;
-        margin: 0% 0% 4% 0%;
+        min-height: 15vh;
+        margin: 0% 0% 2% 0%;
+    }
+
+    .main__devolucion__muneco{
+        height: 12vh;
     }
 
     .main__devolucion__img{
         display: none;
+    }
+
+    .main__devolucion__titulo{
+        margin-top: 9%;
     }
 
     .main__devolucion__encripto{
@@ -266,12 +276,12 @@ body{
     }
 
     .main__devolucion__textarea{
-        width: 80vw;
-        height: 30vw;
+        width: 83vw;
+        margin: 2vh 0px 1vh 0px;
     }
 
     .main__devolucion__copiar{
-        margin: 0px 0px 0px 15vw;
+        margin: 0px 0px 1.5vh 18vw;
     }
 
 }
