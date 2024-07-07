@@ -1,104 +1,56 @@
 let solamenteCaracteres = "¡Caracter no admitido! Solamente letras minúsculas y sin acentos.";
 let vocales = ["a", "e", "i", "o", "u"];
 let reemplazo = ["ai", "enter", "imes", "ober", "ufat"];
-let texto_Encriptado = "";
 //let caracteresPermitidos = ['Enter', 'Shift', 'Backspace', 'ArrowUp', 'ArrowRight', 'ArrowDown', 'ArrowLeft', 'Tab', 'Control', ' Alt', 'Delete'];
 
-/*
-let caracteresNoAdmitidos = [];
-let sumatoriaCaracteresNoAdmitidos = 0;
-
-function cargarCaracteresNoAdmitidos(desde, hasta){
-    for(i=desde;i<=hasta;i++){
-        caracteresNoAdmitidos[sumatoriaCaracteresNoAdmitidos] = String.fromCharCode(i);
-        sumatoriaCaracteresNoAdmitidos++;
-        console.log (caracteresNoAdmitidos);
-    }
-}
-
-cargarCaracteresNoAdmitidos(33, 43);
-cargarCaracteresNoAdmitidos(45, 45);
-cargarCaracteresNoAdmitidos(47, 96);
-cargarCaracteresNoAdmitidos(123,255);
-*/
+let recargar = document.getElementById('logo-alura');
+recargar.addEventListener('click', function(){
+    location.reload(true);
+});
 
 let caracter = document.getElementById('main-ingreso-textarea');
 caracter.addEventListener('keydown', function(event) {
-
     let evento = event.key.charCodeAt(0);
     let carac = event.key;
 
-        // Aquí puedes manejar la lógica para la tecla presionada
-        console.log('Tecla presionada:', event);
-        // Transforma la tecla en su código ASCII
-        console.log('Código ASCII:', evento);
-
-    if((evento > 33 && evento < 45 || evento == 45 || evento > 47 && evento < 96 || evento > 123) && carac !== 'Enter' && carac !== 'Shift' && carac !== 'Backspace' && carac !== 'ArrowUp' && carac !== 'ArrowRight' && carac !== 'ArrowDown' && carac !== 'ArrowLeft' && carac !== 'Tab' && carac !== 'Control' && carac !== ' Alt'&& carac !== 'Delete'){
+    if((evento > 33 && evento < 45 || evento == 45 || evento > 47 && evento < 96 || evento > 123) && carac !== 'Enter' && carac !== 'Shift' && carac !== 'Backspace' && carac !== 'ArrowUp' && carac !== 'ArrowRight' && carac !== 'ArrowDown' && carac !== 'ArrowLeft' && carac !== 'Tab' && carac !== 'Control' && carac !== ' Alt' && carac !== 'Delete' && carac !== ',' ){
         alert(solamenteCaracteres);
         event.preventDefault();
-        return;
+        return 0;
     }
     else{
         return 0;
     }
 });
 
+let mostrarImagen = document.getElementById('main-ingreso-textarea');
+mostrarImagen.addEventListener('input', function() {
+    if (mostrarImagen.value.trim() === "") {
+        mostrarMuneco();
+    } else {
+        clearMuneco();
+    }
+});
+
+let enter = document.getElementById('main-ingreso-textarea');
+enter.addEventListener('keydown', function(event){
+    if(event.key === 'Enter'){
+        event.preventDefault();
+        encriptar();
+    }
+});
+
+function mostrarMuneco(){
+    document.getElementById('main-devolucion-muneco').removeAttribute('hidden');
+    document.getElementById('main-button-encriptar').setAttribute('disabled', '');
+    document.getElementById('main-button-desencriptar').setAttribute('disabled', '');
+    document.getElementById('main-devolucion-encripto').setAttribute('hidden', '');
+}
+
 function clearMuneco(){
     document.getElementById('main-devolucion-muneco').setAttribute('hidden', '');
     document.getElementById('main-button-encriptar').removeAttribute('disabled');
     document.getElementById('main-button-desencriptar').removeAttribute('disabled');
-}
-
-
-function encriptar(){
-    let encriptado = document.getElementById("main-ingreso-textarea").value.split("",undefined);
-
-    for ( i = 0 ; i < encriptado.length ; i++ ){
-        
-        texto_Encriptado = texto_Encriptado + encripto(encriptado[i]);
-
-    }
-
-    imprimir(texto_Encriptado);
-
-}
-
-function encripto (vocal){
-    if (vocal === "a"){
-        return "ai";
-    }
-    if (vocal === "e"){
-        return "enter";
-    }
-    if (vocal === "i"){
-        return "imes";
-    }
-    if (vocal === "o"){
-        return "ober";
-    }
-    if (vocal === "u"){
-        return "ufat";
-    }
-    else{
-        return vocal;
-    }
-}
-
-function desencriptar(){
-    let desencriptado = reemplazoTexto(reemplazo, vocales);
-
-    console.log(desencriptado);
-    imprimir(desencriptado);
-}
-
-function reemplazoTexto(buscar, reemplazar){
-    let texto = document.getElementById('main-ingreso-textarea').value;
-
-    for( i=0 ; i < vocales.length ; i++){
-        texto = texto.replaceAll(buscar[i], reemplazar[i]);
-    }
-
-    return texto;
 }
 
 function imprimir(texto){
@@ -114,4 +66,46 @@ function copiar(){
     let copiarTexto = document.getElementById('main-devolucion-textarea').value;
 
     navigator.clipboard.writeText(copiarTexto);
+}
+
+function encripto(vocal){
+    for( p=0 ; p<vocales.length ; p++){
+        if (vocal === vocales[p]){
+            return reemplazo[p];
+        }
+        else if( p>3 ){
+            return vocal;
+        }
+    }
+}
+
+function desencripto(buscar, reemplazar){
+    let texto = document.getElementById('main-ingreso-textarea').value;
+
+    for( i=0 ; i < vocales.length ; i++){
+        texto = texto.replaceAll(buscar[i], reemplazar[i]);
+    }
+
+    return texto;
+}
+
+function encriptar(){
+    let aEncriptar = document.getElementById("main-ingreso-textarea").value.split("",undefined);
+    let texto_Encriptado = "";
+
+    for ( i = 0 ; i < aEncriptar.length ; i++ ){
+        
+        texto_Encriptado = texto_Encriptado + encripto(aEncriptar[i]);
+
+    }
+
+    imprimir(texto_Encriptado);
+
+}
+
+function desencriptar(){
+    let desencriptado = desencripto(reemplazo, vocales);
+
+    console.log(desencriptado);
+    imprimir(desencriptado);
 }
