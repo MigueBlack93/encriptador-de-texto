@@ -1,7 +1,6 @@
 let solamenteCaracteres = "¡Caracter no admitido! Solamente letras minúsculas y sin acentos.";
 let vocales = ["a", "e", "i", "o", "u"];
 let reemplazo = ["ai", "enter", "imes", "ober", "ufat"];
-//let caracteresPermitidos = ['Enter', 'Shift', 'Backspace', 'ArrowUp', 'ArrowRight', 'ArrowDown', 'ArrowLeft', 'Tab', 'Control', ' Alt', 'Delete'];
 
 let recargar = document.getElementById('logo-alura');
 recargar.addEventListener('click', function(){

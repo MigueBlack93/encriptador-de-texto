@@ -217,6 +217,10 @@ body{
     background-color: var(--color-hover-encriptado);
 }
 
+.header__imagen:hover{
+    cursor: pointer;
+}
+
 @media (max-width: 1300px) {
     body{
         height: fit-content;
