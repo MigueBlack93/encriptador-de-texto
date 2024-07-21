@@ -333,9 +333,13 @@ body{
 
     .main__devolucion{
         width: 92%;
-        min-height: 13vh;
         display: flex;
         align-items: center;
+    }
+
+    .main__devolucion__muneco{
+        min-height: 13px;
+        height: fit-content;
     }
 
     .main__devolucion__img{
@@ -349,17 +353,15 @@ body{
     .main__devolucion__encripto{
         resize: vertical;
         justify-content: space-between;
+        align-items: center;
     }
 
     .main__devolucion__textarea{
-        width: 88vw;
         height: 31vh;
         margin: 1.5vh 0px 1vh 0px;
     }
 
     .main__devolucion__copiar{
         margin: 0px 0px 1vh 0vw;
-        width: 88vw;
     }
-
 }
