@@ -9,7 +9,7 @@ recargar.addEventListener('click', function(){
 
 let caracter = document.getElementById('main-ingreso-textarea');
 caracter.addEventListener('keydown', function(event) {
-    let evento = event.charCodeAt(0);
+    let evento = event.key.charCodeAt(0);
     let carac = event.key;
 
     if((evento > 33 && evento < 45 || evento == 45 || evento > 47 && evento < 96 || evento > 123) && carac !== 'Enter' && carac !== 'Shift' && carac !== 'Backspace' && carac !== 'ArrowUp' && carac !== 'ArrowRight' && carac !== 'ArrowDown' && carac !== 'ArrowLeft' && carac !== 'Tab' && carac !== 'Control' && carac !== ' Alt' && carac !== 'Delete' && carac !== ',' ){
