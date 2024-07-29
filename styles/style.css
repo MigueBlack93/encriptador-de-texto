@@ -65,6 +65,10 @@ body{
     resize: none;
 }
 
+.main__ingreso__textarea::placeholder{
+    color: var(--color-texto);
+}
+
 .main__advertencia{
     font-family: var(--fuente-textos);
     font-weight: var(--peso-fuente-textos);
@@ -119,7 +123,7 @@ body{
     width: 30%;
     margin: 0 1% 1% 1%;
     border-radius: 32px;
-    box-shadow: 0px 0px 12px gainsboro;
+    box-shadow: 0px 0px 12px 0px #bfc1c2;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -195,6 +199,16 @@ body{
     color: var(--color-fondo-encriptado);
 }
 
+.footer__github{
+    text-decoration: none;
+    color: var(--color-fondo-encriptado);
+}
+
+.header__imagen:hover{
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 8px var(--color-hover-encriptado));
+}
+
 #main-button-encriptar:disabled{
     background-color: var(--color-disabled)
 }
@@ -217,8 +231,9 @@ body{
     background-color: var(--color-hover-encriptado);
 }
 
-.header__imagen:hover{
-    cursor: pointer;
+.footer__github:hover{
+    color: var(--color-hover-encriptado);
+    text-decoration: underline;
 }
 
 @media (max-width: 1300px) {
