@@ -92,10 +92,8 @@ function encriptar(){
     let aEncriptar = document.getElementById("main-ingreso-textarea").value.split("",undefined);
     let texto_Encriptado = "";
 
-    for ( i = 0 ; i < aEncriptar.length ; i++ ){
-        
+    for ( i = 0 ; i < aEncriptar.length ; i++ ){ 
         texto_Encriptado = texto_Encriptado + encripto(aEncriptar[i]);
-
     }
 
     imprimir(texto_Encriptado);
