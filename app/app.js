@@ -7,20 +7,28 @@ recargar.addEventListener('click', function(){
     location.reload(true);
 });
 
-let caracter = document.getElementById('main-ingreso-textarea');
-caracter.addEventListener('keydown', function(event) {
-    let evento = event.key.charCodeAt(0);
-    let carac = event.key;
+document.addEventListener('DOMContentLoaded', (event) => {
+    let textarea = document.getElementById('main-ingreso-textarea');
 
-    if((evento > 33 && evento < 45 || evento == 45 || evento > 47 && evento < 96 || evento > 123) && carac !== 'Enter' && carac !== 'Shift' && carac !== 'Backspace' && carac !== 'ArrowUp' && carac !== 'ArrowRight' && carac !== 'ArrowDown' && carac !== 'ArrowLeft' && carac !== 'Tab' && carac !== 'Control' && carac !== ' Alt' && carac !== 'Delete' && carac !== ',' ){
-        alert(solamenteCaracteres);
-        event.preventDefault();
-        return 0;
-    }
-    else{
-        return 0;
-    }
+    textarea.addEventListener('input', (e) => {
+        let text = e.data;
+        let unicodeValues = text.charCodeAt(0);
+        console.log(unicodeValues); 
+
+        if(unicodeValues<97 || unicodeValues>123){
+            alert(solamenteCaracteres);
+            textarea.value = textarea.value.slice(0, -1);
+            return 0;
+        }
+        else{
+            return 0;
+        }
+    });   
 });
+
+function convertToUnicode(text) {
+    return Array.from(text).map(char => char.charCodeAt(0));
+}
 
 let mostrarImagen = document.getElementById('main-ingreso-textarea');
 mostrarImagen.addEventListener('input', function() {
